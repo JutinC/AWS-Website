@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 5 - AWS Academy</title>
+    <link rel="stylesheet" href="homepage.css?v=1.0">
+</head>
+<body>
+    <header>
+        <h1><a href="homepage.html">Home</a></h1>
+        <nav>
+            <ul>
+                <li><a href="unit1.html">Unit 1</a></li>
+                <li><a href="unit2.html">Unit 2</a></li>
+                <li><a href="unit3.html">Unit 3</a></li>
+                <li><a href="unit4.html">Unit 4</a></li>
+                <li><a href="unit5.html" class="active">Unit 5</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="unit-content">
+            <a href="homepage.html" class="back-link">← Back to Home</a>
+            
+            <div class="unit-header">
+                <h1>Unit 5 – Networking & Content Delivery</h1>
+                <div class="unit-keywords">
+                    <span>Amazon VPC</span> • <span>VPC Wizard</span> • <span>VPC Networking</span> • <span>VPC Security</span> • <span>Route 53</span> • <span>CloudFront</span>
+                </div>
+            </div>
+
+            <div class="unit-overview">
+                <h2>Unit 5 Overview</h2>
+                <p>AWS Unit 5 focuses on cloud networking, how virtual networks are built using Amazon VPC, how traffic flows through subnets and route tables; and how AWS delivers content globally using Route 53 and CloudFront. The goal of this unit is to understand how AWS resources communicate, how to control access using networking rules, and how to improve performance using content delivery services.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="info-card">
+                    <h3>Amazon VPC (Virtual Private Cloud)</h3>
+                    <p>Amazon VPC is a logically isolated virtual network in AWS where you can launch resources like EC2 instances. It is similar to having your own private data center in the cloud.</p>
+                    <div class="card-details">
+                        <strong>You control:</strong>
+                        <ul>
+                            <li>IP address ranges (CIDR blocks)</li>
+                            <li>Subnets</li>
+                            <li>Route tables</li>
+                            <li>Internet gateways</li>
+                            <li>Security rules</li>
+                        </ul>
+                    </div>
+                    <div class="card-note">
+                        <strong>Note:</strong> Every AWS account comes with a default VPC, but you can create custom VPCs for better security and organization.
+                    </div>
+                    <img src="VPC.png" alt="VPC Diagram" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>Subnets</h3>
+                    <p>A subnet is a smaller network inside a VPC. Each subnet exists in only one Availability Zone.</p>
+                    <div class="card-details">
+                        <strong>Types of subnets:</strong>
+                        <ul>
+                            <li>Public subnet - has a route to an Internet Gateway</li>
+                            <li>Private subnet - no direct internet access</li>
+                        </ul>
+                    </div>
+                    <div class="card-note">
+                        <strong>Note:</strong> Subnets are used to organize workloads and improve security.
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Route Tables</h3>
+                    <p>Route tables control how traffic is directed within your VPC and to external networks.</p>
+                    <div class="card-details">
+                        <strong>Common routes:</strong>
+                        <ul>
+                            <li>Local - Internal VPC traffic</li>
+                            <li>0.0.0.0/0 - internet traffic</li>
+                        </ul>
+                    </div>
+                    <div class="card-note">
+                        <strong>Note:</strong> If a route table is misconfigured, resources may not be reachable.
+                    </div>
+                    <img src="Demo.png" alt="Route Tables Demo" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>CIDR & IP Addressing</h3>
+                    <p>CIDR (Classless Inter-Domain Routing) defines the IP address range for your VPC and subnets.</p>
+                    <div class="card-details">
+                        <strong>Example:</strong> 10.0.0.0/16
+                        <p>The /16 means there are 65,536 IP addresses.</p>
+                    </div>
+                    <div class="card-note">
+                        <strong>Note:</strong> CIDR blocks cannot be changed after creation.
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Security Groups</h3>
+                    <p>Security Groups are virtual firewalls for EC2 instances that control inbound and outbound traffic.</p>
+                    <div class="card-details">
+                        <strong>Features:</strong>
+                        <ul>
+                            <li>Stateful - return traffic is automatically allowed</li>
+                            <li>Applied at the instance level</li>
+                            <li>Can have multiple security groups per instance</li>
+                        </ul>
+                    </div>
+                    <div class="card-note">
+                        <strong>Note:</strong> Security Groups are the primary way to control network access to your instances.
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Route 53</h3>
+                    <p>Route 53 is AWS's DNS (Domain Name System) service.</p>
+                    <div class="card-details">
+                        <strong>Features:</strong>
+                        <ul>
+                            <li>Domain registration</li>
+                            <li>DNS routing</li>
+                            <li>Health checks</li>
+                        </ul>
+                    </div>
+                    <div class="card-note">
+                        <strong>Note:</strong> Routing policies include simple, weighted, latency, Failover, and geolocation.
+                    </div>
+                    <img src="Transit.png" alt="Transit Gateway" class="card-image">
+                </div>
+
+                <div class="info-card summary-card">
+                    <h3>Unit 5 Summary</h3>
+                    <p>AWS Unit 5 focuses on networking and content delivery.</p>
+                    <div class="card-details">
+                        <strong>Key Points:</strong>
+                        <ul>
+                            <li>Amazon VPC provides isolated networks</li>
+                            <li>Subnets divide networks</li>
+                            <li>Route tables control traffic</li>
+                            <li>Security Groups and NACLs provide security</li>
+                            <li>Route 53 handles DNS and domain management</li>
+                            <li>CloudFront delivers content globally</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 AWS Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

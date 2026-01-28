@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 4 - AWS Academy</title>
+    <link rel="stylesheet" href="homepage.css?v=1.0">
+</head>
+<body>
+    <header>
+        <h1><a href="homepage.html">Home</a></h1>
+        <nav>
+            <ul>
+                <li><a href="unit1.html">Unit 1</a></li>
+                <li><a href="unit2.html">Unit 2</a></li>
+                <li><a href="unit3.html">Unit 3</a></li>
+                <li><a href="unit4.html" class="active">Unit 4</a></li>
+                <li><a href="unit5.html">Unit 5</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="unit-content">
+            <a href="homepage.html" class="back-link">← Back to Home</a>
+            
+            <div class="content-section">
+                <h2>Unit 4: AWS Cloud Security</h2>
+                <p>
+                    1. IDENTITY AND ACCESS MANAGEMENT (IAM)
+                    IAM controls who can log in and what they are allowed to do inside AWS. This is the main way AWS handles permissions and account security.
+                    Core IAM Components
+                    Root User
+                    The main account owner created when you first open an AWS account.
+                    
+                    
+                    Has full access to everything.
+                    
+                    
+                    Best practice:
+                    Never use root for daily work
+                    
+                    
+                    Turn on MFA immediately
+                    
+                    
+                    Risk:
+                    If root is hacked, the entire account is compromised.
+                    
+                    
+                    
+                    IAM User
+                    Represents a person or application that needs access to AWS.
+                    
+                    
+                    Has a username and either a password (for console) or access keys (for API).
+                    
+                    
+                    Pros:
+                    Easy to create and manage
+                    
+                     Cons:
+                    
+                    
+                    Long-term access keys can be stolen if stored badly
+                    
+                    
+                    Best practice:
+                    Avoid giving users permanent access keys when possible.
+                    
+                    
+                    
+                    IAM Group
+                    A collection of users with the same permissions.
+                    
+                    
+                    Example:
+                    “Admins” group
+                    
+                    
+                    “Developers” group
+                    
+                    
+                    Benefit:
+                    Easier to manage permissions for many users at once
+                    
+                    
+                    Weakness:
+                    If group policy is too powerful, all users in the group become risky.
+                    
+                    
+                    
+                    IAM Role
+                    A set of permissions that something can temporarily assume.
+                    
+                    
+                    Used by:
+                    EC2 instances
+                    
+                    
+                    Lambda functions
+                    
+                    
+                    Applications
+                    
+                    
+                    Cross-account access
+                    
+                    
+                    Major advantage:
+                    Uses temporary credentials (much safer than long-term keys)
+                    
+                    
+                    Best practice for AWS services
+                    
+                    
+                    Example:
+                    An EC2 instance uses a role to read from S3 without storing any password.
+                    
+                </p>
+                <img src="Unit 4 pt 1.png" alt="Unit 4 pt 1 image">
+                <p>
+                    
+                    IAM Policy
+                    A JSON document that defines permissions.
+                    
+                    
+                    Policies answer:
+                    Who can do what
+                    
+                    
+                    On which resource
+                    
+                    
+                    Under what conditions
+                    
+                    
+                    Example:
+                    Allow user to read objects from one S3 bucket but not delete them.
+                    
+                    
+                    Types:
+                    Managed policies (created by AWS or reusable by you)
+                    
+                    
+                    Inline policies (attached directly to one user/role/group)
+                    
+                    
+                    Weakness:
+                    Writing policies incorrectly can either block everything or allow too much access.
+                    
+                    
+                    
+                    IAM BEST PRACTICES (VERY TESTABLE)
+                    Least Privilege
+                    Only give the minimum permissions needed to do the job.
+                    
+                    
+                    Why:
+                    Reduces damage if an account is hacked or misused.
+                    
+                    
+                    
+                    Use Roles Instead of Access Keys
+                    Roles use temporary credentials.
+                    
+                    
+                    Access keys are permanent and risky.
+                    
+                    
+                    Benefit:
+                    Much safer
+                    
+                    
+                    Automatically rotated
+                    
+                    
+                    
+                    Enable MFA (Multi-Factor Authentication)
+                    Requires a second code from a phone or device.
+                    
+                    
+                    Use on:
+                    Root account
+                    
+                    
+                    Admin users
+                    
+                    
+                    Advantage:
+                    Stops hackers even if they steal your password
+                    
+                    
+                    
+                    Rotate Credentials
+                    Change passwords and access keys regularly.
+                    
+                    
+                    
+                    2. ENCRYPTION AND KEY MANAGEMENT
+                    Encryption protects data so only authorized people can read it.
+                    Types of Encryption
+                    Encryption in Transit
+                    Protects data while moving across the internet.
+                    
+                    
+                    Uses HTTPS / TLS.
+                    
+                    
+                    Example:
+                    When a user uploads a file to S3 using HTTPS.
+                    
+                    
+                    
+                    Encryption at Rest
+                    Protects data while stored on disk.
+                    
+                    
+                    Used in:
+                    S3
+                    
+                    
+                    EBS
+                    
+                    
+                    RDS
+                    
+                    
+                    DynamoDB
+                    
+                    
+                    Benefit:
+                    If someone steals a disk or file, they cannot read the data.
+                    
+                    
+                    
+                    AWS KEY MANAGEMENT SERVICE (KMS)
+                    KMS manages encryption keys.
+                    What it does:
+                    Creates keys
+                    
+                    
+                    Stores keys securely
+                    
+                    
+                    Controls who can use keys
+                    
+                    
+                    Logs key usage
+                    
+                    
+                    Types of keys:
+                    AWS-managed keys (easy, less control)
+                    
+                    
+                    Customer-managed keys (more control, more responsibility)
+                    
+                    
+                    Advantages:
+                    Central control of encryption
+                    
+                    
+                    Integrated with many AWS services
+                    
+                    
+                    Weaknesses:
+                    Costs per key and per request
+                    
+                    
+                    Misconfiguring keys can lock you out of your own data
+                    
+                    
+                    
+                    3. LOGGING, MONITORING, AND AUDITING
+                    This section helps you see what is happening in your account, detect problems, and prove compliance.
+                    
+                    CLOUDWATCH
+                    CloudWatch monitors system performance.
+                    What it collects:
+                    CPU usage
+                    
+                    
+                    Memory (with setup)
+                    
+                    
+                    Disk activity
+                    
+                    
+                    Network traffic
+                    
+                    
+                    Application logs
+                    
+                    
+                    Features:
+                    Metrics dashboards
+                    
+                    
+                    Logs storage
+                    
+                    
+                    Alarms
+                    
+                    
+                    Example:
+                    Alarm triggers if CPU > 80% and adds more servers with Auto Scaling.
+                    
+                    
+                    Advantages:
+                    Real-time visibility
+                    
+                    
+                    Can automate responses
+                    
+                    
+                    Weaknesses:
+                    Storing many logs can become expensive
+                    
+                    
+                    Requires setup for advanced monitoring
+                    
+                </p>
+                <img src="Unit 4 pt 2.png" alt="Unit 4 pt 2 image">
+                <p>
+                    
+                    CLOUDTRAIL
+                    CloudTrail records every API action taken in your account.
+                    It logs:
+                    Who did the action
+                    
+                    
+                    What they did
+                    
+                    
+                    When they did it
+                    
+                    
+                    From where
+                    
+                    
+                    Example:
+                    Shows who deleted an EC2 instance.
+                    
+                    
+                    Why it’s critical:
+                    Security investigations
+                    
+                    
+                    Compliance audits
+                    
+                    
+                    Tracking mistakes
+                    
+                    
+                    Advantages:
+                    Automatic
+                    
+                    
+                    Very detailed
+                    
+                    
+                    Weakness:
+                    Large logs can cost storage money
+                    
+                    
+                    
+                    AWS CONFIG
+                    Tracks configuration changes of AWS resources.
+                    Example:
+                    Detects if a security group was changed to allow public access.
+                    
+                    
+                    Uses:
+                    Compliance checking
+                    
+                    
+                    Auditing changes
+                    
+                    
+                    Security reviews
+                    
+                    
+                    Advantage:
+                    Helps enforce rules and standards
+                    
+                    
+                    Weakness:
+                    Extra cost
+                    
+                    
+                    Needs rules configured to be useful
+                    
+                    
+                    
+                    4. ADVANCED SECURITY SERVICES
+                    AWS WAF (Web Application Firewall)
+                    Blocks common web attacks like:
+                    SQL injection
+                    
+                    
+                    Cross-site scripting
+                    
+                    
+                    Used with:
+                    CloudFront
+                    
+                    
+                    Application Load Balancer
+                    
+                    
+                    Advantage:
+                    Protects websites automatically
+                    
+                    
+                    Weakness:
+                    Rules must be tuned or you block good traffic
+                    
+                    
+                    
+                    AWS Shield (DDoS Protection)
+                    Protects against denial-of-service attacks.
+                    Two levels:
+                    Standard (free, basic protection)
+                    
+                    
+                    Advanced (paid, stronger protection + support)
+                    
+                    
+                    Advantage:
+                    Automatic protection
+                    
+                    
+                    Weakness:
+                    Advanced version is expensive
+                    
+                    
+                    
+                    GuardDuty
+                    Threat detection service.
+                    Monitors:
+                    CloudTrail logs
+                    
+                    
+                    VPC traffic
+                    
+                    
+                    DNS logs
+                    
+                    
+                    Finds:
+                    Suspicious logins
+                    
+                    
+                    Malware activity
+                    
+                    
+                    Unusual behavior
+                    
+                    
+                    Advantage:
+                    Automatic threat detection
+                    
+                    
+                    Weakness:
+                    Alerts must be reviewed and handled
+                    
+                    
+                    
+                    Inspector
+                    Scans workloads for vulnerabilities.
+                    Checks:
+                    Missing patches
+                    
+                    
+                    Security risks
+                    
+                    
+                    Advantage:
+                    Helps secure servers
+                    
+                    
+                    Weakness:
+                    Only works on supported services
+                    
+                    
+                    
+                    5. BACKUP, DISASTER RECOVERY, AND RELIABILITY
+                    RPO and RTO (VERY IMPORTANT TERMS)
+                    RPO (Recovery Point Objective)
+                    Maximum amount of data you can afford to lose.
+                    
+                    
+                    Example:
+                    RPO = 1 hour → backups must happen at least every hour.
+                    
+                    
+                    
+                    RTO (Recovery Time Objective)
+                    Maximum amount of time you can be offline.
+                    
+                    
+                    Example:
+                    RTO = 30 minutes → system must be restored in 30 minutes.
+                    
+                    
+                    
+                    Backup Methods
+                    EBS Snapshots
+                    Backup disks for EC2
+                    
+                    
+                    Stored in S3
+                    
+                    
+                    S3 Versioning
+                    Keeps old versions of files
+                    
+                    
+                    RDS Automated Backups
+                    Daily backups + transaction logs
+                    
+                    
+                    Cross-Region Backups
+                    Protects against region failure
+                    
+                    
+                    Advantages:
+                    Prevents data loss
+                    
+                    
+                    Required for many laws and rules
+                    
+                    
+                    Weaknesses:
+                    Storage costs
+                    
+                    
+                    Restore takes time
+                    
+                    
+                    
+                    6. COST MANAGEMENT AND OPTIMIZATION (BIG TEST AREA)
+                    AWS pricing depends on:
+                    Compute time
+                    
+                    
+                    Storage size
+                    
+                    
+                    Number of requests
+                    
+                    
+                    Data transfer out
+                    
+                    
+                    Extra features (multi-AZ, provisioned IOPS, etc.)
+                    
+                    
+                    
+                    Cost Control Tools
+                    AWS Budgets
+                    Set monthly spending limits
+                    
+                    
+                    Get alerts when near limit
+                    
+                    
+                    Advantage:
+                    Prevents surprise bills
+                    
+                    
+                    Weakness:
+                    Only alerts, does not stop usage
+                    
+                    
+                    
+                    Cost Explorer
+                    Visual tool to analyze spending
+                    
+                    
+                    Shows trends by service, region, tag
+                    
+                    
+                    Advantage:
+                    Helps find waste
+                    
+                    
+                    
+                    Cost Allocation Tags
+                    Label resources by project or team
+                    
+                    
+                    Example:
+                    Project = “Website”
+                    
+                    
+                    Advantage:
+                    Know who is spending money
+                    
+                    
+                    
+                    Trusted Advisor
+                    Checks:
+                    Cost optimization
+                    
+                    
+                    Security
+                    
+                    
+                    Performance
+                    
+                    
+                    Fault tolerance
+                    
+                    
+                    Note:
+                    Full features require higher support plans
+                    
+                    
+                    
+                    Cost Optimization Strategies
+                    Right-Sizing
+                    Use smaller instances if large ones are unused
+                    
+                    
+                    Turn Off Unused Resources
+                    Stop EC2
+                    
+                    
+                    Delete unused volumes
+                    
+                    
+                    Use Savings Plans / Reserved Instances
+                    Big discounts for steady usage
+                    
+                    
+                    Use S3 Lifecycle Rules
+                    Move old files to cheaper storage
+                    
+                    
+                    Weakness:
+                    Over-optimizing can hurt performance or reliability
+                    
+                    
+                    
+                    7. AWS SUPPORT PLANS (TYPES OF PLANS)
+                    These plans decide how much help you get from AWS.
+                    
+                    Basic Support (Free)
+                    Includes:
+                    Billing support
+                    
+                    
+                    Documentation
+                    
+                    
+                    Best for:
+                    Students
+                    
+                    
+                    Personal projects
+                    
+                    
+                    Weakness:
+                    No technical support
+                    
+                    
+                    
+                    Developer Support
+                    Includes:
+                    Email support
+                    
+                    
+                    Business-hours response
+                    
+                    
+                    Best for:
+                    Development and testing
+                    
+                    
+                    Weakness:
+                    Not good for production emergencies
+                    
+                    
+                    
+                    Business Support
+                    Includes:
+                    24/7 technical support
+                    
+                    
+                    Faster response times
+                    
+                    
+                    Trusted Advisor full checks
+                    
+                    
+                    Best for:
+                    Production workloads
+                    
+                    
+                    Weakness:
+                    Higher monthly cost
+                    
+                    
+                    
+                    Enterprise Support
+                    Includes:
+                    Fastest response
+                    
+                    
+                    Dedicated technical managers
+                    
+                    
+                    Architecture guidance
+                    
+                    
+                    Best for:
+                    Large companies
+                    
+                    
+                    Mission-critical systems
+                    
+                    
+                    Weakness:
+                    Very expensive
+                    
+                    
+                    
+                     UNIT 4 SUMMARY
+                    How IAM controls access using users, roles, policies, and least privilege
+                    
+                    
+                    Why roles are safer than access keys
+                    
+                    
+                    The difference between encryption in transit and at rest
+                    
+                    
+                    What CloudWatch, CloudTrail, and Config each do
+                    
+                    
+                    How backups use RPO and RTO
+                    
+                    
+                    How budgets and cost explorer prevent surprise bills
+                    
+                    
+                    Differences between AWS support plans
+                    
+                </p>
+                <img src="Unit 4 pt 3.png" alt="Unit 4 pt 3 image">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 AWS Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
