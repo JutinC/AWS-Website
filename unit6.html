@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 6 - AWS Academy</title>
+    <link rel="stylesheet" href="homepage.css?v=1.0">
+</head>
+<body>
+    <header>
+        <h1><a href="homepage.html">Home</a></h1>
+        <nav>
+            <ul>
+                <li><a href="unit1.html">Unit 1</a></li>
+                <li><a href="unit2.html">Unit 2</a></li>
+                <li><a href="unit3.html">Unit 3</a></li>
+                <li><a href="unit4.html">Unit 4</a></li>
+                <li><a href="unit5.html">Unit 5</a></li>
+                <li><a href="unit6.html" class="active">Unit 6</a></li>
+                <li><a href="unit7.html">Unit 7</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="unit-content">
+            <a href="homepage.html" class="back-link">← Back to Home</a>
+            
+            <div class="unit-header">
+                <h1>Unit 6 – Compute Services</h1>
+                <div class="unit-keywords">
+                    <span>Amazon EC2</span> • <span>Cost Optimization</span> • <span>Containers</span> • <span>Lambda</span> • <span>Elastic Beanstalk</span>
+                </div>
+            </div>
+
+            <div class="unit-overview">
+                <h2>Unit 6 Overview</h2>
+                <p>AWS Unit 6 concentrates on compute services, which define how applications run in the cloud. Compute services deliver processing power, memory, and execution environments for applications. This unit delves into different compute models, including virtual machines, containers, managed platforms, and serverless computing. It explains how AWS enables developers to balance control, cost, and operational responsibility.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="info-card">
+                    <h3>Amazon EC2 (Elastic Compute Cloud)</h3>
+                    <p>Amazon EC2 provides resizable virtual servers in the cloud. Users can launch virtual machines that scale up or down based on demand, eliminating the need to purchase and maintain physical servers.</p>
+                    <div class="card-details">
+                        <strong>Service Model:</strong>
+                        <p>EC2 is classified as Infrastructure as a Service (IaaS).</p>
+                        <strong>Responsibility Split:</strong>
+                        <ul>
+                            <li>AWS manages the underlying hardware</li>
+                            <li>Customers are responsible for the operating system, applications, and configurations</li>
+                        </ul>
+                    </div>
+                    <img src="EC2.png" alt="EC2 Overview" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>EC2 - How It Works</h3>
+                    <p>When an EC2 instance is launched, AWS provisions a virtual machine with the specified configuration.</p>
+                    <div class="card-details">
+                        <strong>Process:</strong>
+                        <ul>
+                            <li>Select an Amazon Machine Image (AMI)</li>
+                            <li>Choose an instance type</li>
+                            <li>Configure security groups and networking</li>
+                            <li>Launch the instance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>EC2 - Instance Types</h3>
+                    <p>EC2 offers multiple instance families, each optimized for different workloads.</p>
+                    <div class="card-details">
+                        <strong>Instance Families:</strong>
+                        <ul>
+                            <li><strong>General purpose instances:</strong> Offer balanced resources</li>
+                            <li><strong>Compute-optimized instances:</strong> Focus on performance</li>
+                            <li><strong>Memory-optimized instances:</strong> Designed for large in-memory databases</li>
+                            <li><strong>Storage-optimized instances:</strong> Provide fast disk access</li>
+                        </ul>
+                    </div>
+                    <img src="instance types.png" alt="EC2 Instance Types" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>EC2 - Benefits & Use Cases</h3>
+                    <p>EC2 is ideal for applications that require full control over the server.</p>
+                    <div class="card-details">
+                        <strong>Benefits:</strong>
+                        <ul>
+                            <li>Supports custom software stacks</li>
+                            <li>Compatible with legacy applications</li>
+                            <li>Handles specialized workloads</li>
+                        </ul>
+                        <strong>Common Use Cases:</strong>
+                        <ul>
+                            <li>Web servers</li>
+                            <li>Application servers</li>
+                            <li>Development environments</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>EC2 Cost Optimization</h3>
+                    <p>AWS provides multiple pricing models to help reduce compute costs. Cost optimization focuses on matching options to specific needs.</p>
+                    <div class="card-details">
+                        <strong>Pricing Models:</strong>
+                        <ul>
+                            <li><strong>On-Demand:</strong> Pay for compute capacity by the hour or second</li>
+                            <li><strong>Reserved Instances:</strong> Significant discount for 1-3 year commitments</li>
+                            <li><strong>Spot Instances:</strong> Use spare capacity at up to 90% discount</li>
+                            <li><strong>Savings Plans:</strong> Flexible pricing model with lower costs</li>
+                        </ul>
+                    </div>
+                    <img src="price patterns.png" alt="EC2 Pricing Patterns" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>Amazon ECS (Elastic Container Service)</h3>
+                    <p>Amazon ECS is a fully managed container orchestration platform that allows developers to run and manage containers.</p>
+                    <div class="card-details">
+                        <strong>Features:</strong>
+                        <ul>
+                            <li>Fully managed service</li>
+                            <li>Supports Docker containers</li>
+                            <li>Automatic scaling</li>
+                            <li>Integrated with other AWS services</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Amazon EKS (Elastic Kubernetes Service)</h3>
+                    <p>Amazon EKS runs Kubernetes on AWS, making it easy to deploy, manage, and scale containerized applications.</p>
+                    <div class="card-details">
+                        <strong>Ideal For:</strong>
+                        <ul>
+                            <li>Teams already using Kubernetes</li>
+                            <li>Requiring portability across environments</li>
+                            <li>Need for Kubernetes-native features</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>AWS Fargate</h3>
+                    <p>AWS Fargate is a serverless compute engine specifically for containers. It eliminates the need to manage EC2 instances or clusters.</p>
+                    <div class="card-details">
+                        <strong>Benefits:</strong>
+                        <ul>
+                            <li>No server management required</li>
+                            <li>Pay only for resources used</li>
+                            <li>Automatic scaling</li>
+                            <li>Works with both ECS and EKS</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>AWS Lambda</h3>
+                    <p>AWS Lambda is a serverless compute service that runs code in response to events without provisioning or managing servers.</p>
+                    <div class="card-details">
+                        <strong>Features:</strong>
+                        <ul>
+                            <li>Event-driven execution</li>
+                            <li>Automatic scaling</li>
+                            <li>Pay per request</li>
+                            <li>No server management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>AWS Elastic Beanstalk</h3>
+                    <p>AWS Elastic Beanstalk is a Platform as a Service (PaaS) for application deployment. Developers upload their code, and AWS automatically manages the infrastructure.</p>
+                    <div class="card-details">
+                        <strong>Managed Aspects:</strong>
+                        <ul>
+                            <li>Scaling</li>
+                            <li>Monitoring</li>
+                            <li>Load balancing</li>
+                            <li>Application health monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Amazon EBS (Elastic Block Store)</h3>
+                    <p>Amazon EBS provides persistent block storage volumes for use with EC2 instances. EBS volumes are highly available and reliable storage volumes that can be attached to any running instance in the same Availability Zone.</p>
+                    <div class="card-details">
+                        <strong>Features:</strong>
+                        <ul>
+                            <li>Persistent storage independent of instance lifecycle</li>
+                            <li>High availability and durability</li>
+                            <li>Multiple volume types for different use cases</li>
+                            <li>Automatic backups with snapshots</li>
+                        </ul>
+                    </div>
+                    <img src="EBS.png" alt="Amazon EBS" class="card-image">
+                </div>
+
+                <div class="info-card summary-card">
+                    <h3>Service Comparison</h3>
+                    <p>Different compute services offer varying levels of control and management responsibility.</p>
+                    <div class="card-details">
+                        <strong>Control vs. Management:</strong>
+                        <ul>
+                            <li><strong>EC2:</strong> Offers the most control but requires the most management effort</li>
+                            <li><strong>Containers (ECS, EKS, Fargate):</strong> Improve portability and efficiency</li>
+                            <li><strong>Lambda:</strong> Provides the lowest operational overhead with event-driven execution</li>
+                            <li><strong>Elastic Beanstalk:</strong> Balances ease of use with infrastructure control</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 AWS Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

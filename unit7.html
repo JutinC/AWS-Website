@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 7 - AWS Academy</title>
+    <link rel="stylesheet" href="homepage.css?v=1.0">
+</head>
+<body>
+    <header>
+        <h1><a href="homepage.html">Home</a></h1>
+        <nav>
+            <ul>
+                <li><a href="unit1.html">Unit 1</a></li>
+                <li><a href="unit2.html">Unit 2</a></li>
+                <li><a href="unit3.html">Unit 3</a></li>
+                <li><a href="unit4.html">Unit 4</a></li>
+                <li><a href="unit5.html">Unit 5</a></li>
+                <li><a href="unit6.html">Unit 6</a></li>
+                <li><a href="unit7.html" class="active">Unit 7</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="unit-content">
+            <a href="homepage.html" class="back-link">← Back to Home</a>
+            
+            <div class="unit-header">
+                <h1>Unit 7 – Storage Services</h1>
+                <div class="unit-keywords">
+                    <span>Amazon EBS</span> • <span>Amazon S3</span> • <span>Amazon EFS</span> • <span>S3 Glacier</span>
+                </div>
+            </div>
+
+            <div class="unit-overview">
+                <h2>Unit 7 Overview</h2>
+                <p>AWS Unit 7 focuses on cloud storage in AWS, explaining how data is stored, accessed, protected, and managed across different AWS storage services. Storage is a critical component of cloud computing because applications rely on fast, reliable, and scalable data access.</p>
+                <p>This unit explores the four main storage types used in AWS: block storage, object storage, file storage, and archival storage. Each storage type serves a different purpose depending on performance needs, scalability requirements, cost considerations, and how often the data is accessed. By the end of this unit, you should be able to choose the most appropriate storage service for a given workload.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="info-card">
+                    <h3>Storage Basics</h3>
+                    <p>Storage in AWS is designed to be <strong>scalable, durable, and highly available</strong>, meaning it can grow as data increases, protect against data loss, and remain accessible even during failures. AWS provides multiple storage services because no single storage solution fits every application.</p>
+                    <p>Different applications require different access speeds, sharing capabilities, and cost models. For example, operating systems and databases need low-latency storage, while backups and archives prioritize durability and low cost. Understanding these differences allows organizations to store data efficiently while minimizing cost and maximizing performance.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Amazon EBS (Elastic Block Store)</h3>
+                    <p>Amazon EBS is a <strong>block storage service</strong> designed specifically for use with Amazon EC2 instances. It functions like a virtual hard drive that can be attached to an instance and used to store operating systems, applications, and databases.</p>
+                    <p>EBS provides <strong>persistent storage</strong>, meaning data remains available even if the EC2 instance is stopped or restarted. This makes EBS ideal for workloads that require consistent performance and reliable data persistence.</p>
+                    <img src="EBS.png" alt="EBS Diagram" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>EBS – How It Works</h3>
+                    <p>EBS volumes are created within a specific Availability Zone and can only be attached to EC2 instances in the same zone. Each volume acts as raw block-level storage, allowing the operating system to format and manage it just like a physical disk.</p>
+                    <p>Volumes can be detached from one instance and reattached to another, which is useful for recovery or maintenance. AWS also supports EBS snapshots, which create point-in-time backups stored in Amazon S3 for durability and disaster recovery.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>EBS – Volume Types</h3>
+                    <p>Amazon EBS offers multiple volume types optimized for different workloads. <strong>SSD-backed volumes</strong> are designed for frequent access, low latency, and high IOPS, making them suitable for databases and application servers.</p>
+                    <p><strong>HDD-backed volumes</strong> are optimized for large, sequential workloads such as log processing or data warehousing. Choosing the correct volume type helps balance performance and cost, ensuring applications run efficiently without overpaying for unused performance.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Amazon S3 (Simple Storage Service)</h3>
+                    <p>Amazon S3 is an <strong>object storage service</strong> designed to store and retrieve virtually unlimited amounts of data. Instead of storing data as files or blocks, S3 stores data as objects inside containers called buckets.</p>
+                    <p>S3 is built for extreme durability (99.999999999%), global accessibility, and scalability. It is commonly used for backups, static website hosting, media storage, and large-scale data analytics.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>S3 – Objects & Buckets</h3>
+                    <p>Each S3 object consists of the data itself, metadata, and a unique key that identifies the object within a bucket. Buckets must have globally unique names and define where data is stored.</p>
+                    <p>S3 supports features such as <strong>versioning</strong>, which keeps multiple versions of an object, and <strong>encryption</strong>, which protects data at rest. These features make S3 both flexible and secure for storing critical data.</p>
+                    <img src="bucket.png" alt="S3 Buckets Diagram" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>S3 – Storage Classes</h3>
+                    <p>Amazon S3 provides multiple storage classes to reduce cost based on access frequency. <strong>S3 Standard</strong> is used for frequently accessed data, while <strong>Standard-IA</strong> and <strong>One Zone-IA</strong> are designed for infrequently accessed data at a lower cost.</p>
+                    <p><strong>S3 Intelligent-Tiering</strong> automatically moves data between tiers based on usage patterns, and <strong>S3 Glacier</strong> is used for long-term archival storage. Storage classes allow organizations to optimize cost without sacrificing durability.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>S3 – Use Cases</h3>
+                    <p>Amazon S3 is commonly used for:</p>
+                    <ul>
+                        <li>Application data storage</li>
+                        <li>Backups and disaster recovery</li>
+                        <li>Static website hosting</li>
+                        <li>Media storage and streaming</li>
+                        <li>Data lakes and analytics</li>
+                    </ul>
+                    <p>Because S3 is highly scalable and accessible over the internet, it is often the backbone of cloud-based applications.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Amazon EFS (Elastic File System)</h3>
+                    <p>Amazon EFS is a <strong>file storage service</strong> that provides a shared file system for multiple EC2 instances. Unlike EBS, which attaches to one instance at a time, EFS allows simultaneous access from many instances.</p>
+                    <p>EFS automatically scales as files are added or removed, eliminating the need for capacity planning. This makes it ideal for workloads that require shared access to files.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>EFS – How It Works</h3>
+                    <p>EFS uses standard file system protocols, allowing applications to access files just like they would on a traditional file server. Storage capacity grows and shrinks automatically based on usage.</p>
+                    <p>Because EFS spans multiple Availability Zones, it provides high availability and fault tolerance without manual configuration.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>EFS – Benefits</h3>
+                    <p>EFS is well suited for collaborative workloads such as:</p>
+                    <ul>
+                        <li>Content management systems</li>
+                        <li>Web servers with shared content</li>
+                        <li>Development and testing environments</li>
+                        <li>Machine learning workflows</li>
+                    </ul>
+                    <p>Its ability to support shared access simplifies application architecture and improves scalability.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Amazon S3 Glacier – Use Cases</h3>
+                    <p>Amazon S3 Glacier is a low-cost archival storage service designed for data that is rarely accessed but must be retained for long periods. Retrieval times range from minutes to hours depending on the retrieval option selected.</p>
+                    <p>Glacier is commonly used for compliance records, long-term backups, and historical archives. While access is slower, the significantly lower storage cost makes it ideal for long-term retention.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Storage Comparison</h3>
+                    <ul>
+                        <li><strong>EBS:</strong> Block storage for EC2 with low latency and high performance</li>
+                        <li><strong>S3:</strong> Object storage that is highly scalable, durable, and internet accessible</li>
+                        <li><strong>EFS:</strong> File storage that supports shared access across multiple instances</li>
+                        <li><strong>S3 Glacier:</strong> Archival storage optimized for low cost and infrequent access</li>
+                    </ul>
+                    <p>Choosing the right storage service depends on performance needs, access patterns, and budget.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 AWS Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,18 +1,20 @@
-/* AWS Theme Colors */
+/* AWS Theme Color Variables - CSS custom properties for consistent theming, colors match AWS brand guidelines, can be easily updated in one place, all color values defined here and referenced throughout stylesheet */
 :root {
-    --aws-dark-blue: #53b6cfdb;
-    --aws-light-blue: #146EB4;
-    --aws-white: #FFFFFF;
-    --aws-light-gray: #F7F7F7;
-    --aws-dark-gray: #16191F;
+    --aws-dark-blue: #53b6cfdb;    /* Primary brand color - used for headers, buttons, and accents */
+    --aws-light-blue: #146EB4;      /* Secondary brand color - used for hover states and highlights */
+    --aws-white: #FFFFFF;            /* Background color and text on dark backgrounds */
+    --aws-light-gray: #F7F7F7;       /* Light background for content sections and cards */
+    --aws-dark-gray: #16191F;        /* Dark text color for body content and paragraphs */
 }
 
+/* Universal Reset - Removes default browser margins and padding from all elements, box-sizing: border-box ensures padding and borders included in element width/height calculations, provides consistent styling across different browsers */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body Styling - Sets base typography and color scheme for entire page, font stack uses system fonts for optimal performance and native look, line-height: 1.6 improves readability with comfortable spacing between lines */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background-color: var(--aws-white);
@@ -20,6 +22,7 @@ body {
     line-height: 1.6;
 }
 
+/* Header Container - Styles top navigation bar with AWS brand colors, box-shadow adds subtle depth to separate header from main content, padding provides comfortable spacing around header elements */
 header {
     background-color: var(--aws-dark-blue);
     color: var(--aws-white);
@@ -27,34 +30,41 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Header Title (Home Link) - Displays "Home" link in header, inline-block allows it to sit next to navigation menu, margin-right creates spacing between title and navigation */
 header h1 {
     display: inline-block;
     margin-right: 2rem;
 }
 
+/* Home link styling - removes default underline and sets white text color */
 header h1 a {
     color: var(--aws-white);
     text-decoration: none;
 }
 
+/* Hover state for home link (currently same color, but can be customized) */
 header h1 a:hover {
     color: var(--aws-white);
 }
 
+/* Active Navigation Link - Styles currently active/selected navigation item, used to indicate which page user is currently viewing */
 nav ul li a.active {
     color: var(--aws-white);
 }
 
+/* Navigation List Container - Removes default list bullets and displays as inline block, allows navigation to appear horizontally next to header title */
 nav ul {
     list-style: none;
     display: inline-block;
 }
 
+/* Navigation List Items - Each unit link displayed inline (horizontally), margin-right creates spacing between navigation links */
 nav ul li {
     display: inline-block;
     margin-right: 1.5rem;
 }
 
+/* Navigation Links - Styles individual unit navigation links, padding provides clickable area and visual spacing, transition creates smooth color change on hover */
 nav ul li a {
     color: var(--aws-white);
     text-decoration: none;
@@ -62,17 +72,19 @@ nav ul li a {
     transition: color 0.3s;
 }
 
+/* Hover effect for navigation links */
 nav ul li a:hover {
     color: var(--aws-white);
 }
 
+/* Main Content Container - Removes default padding and margins to allow full-width layouts, max-width: 100% ensures content doesn't overflow on small screens */
 main {
     padding: 0;
     max-width: 100%;
     margin: 0;
 }
 
-/* Title Section */
+/* Title Section - Contains main page heading and tagline, centered layout with generous padding for visual breathing room, max-width: 1200px constrains content width for optimal readability, margin: 0 auto centers section horizontally */
 .title-section {
     padding: 3rem 3rem 2rem 3rem;
     max-width: 1200px;
@@ -80,6 +92,7 @@ main {
     text-align: center;
 }
 
+/* Main page title - large, bold, AWS brand color */
 .title-section h2 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -87,22 +100,24 @@ main {
     margin-bottom: 0.5rem;
 }
 
+/* Tagline/subtitle - smaller, muted gray color for hierarchy */
 .title-section p {
     font-size: 1.1rem;
     color: #718096;
 }
 
-/* Units Grid - Title Cards */
+/* Units Grid Container - CSS Grid layout for displaying unit cards responsively, auto-fill with fixed 300px width keeps cards separated and prevents them from stretching, cards automatically wrap to new rows on smaller screens, gap: 2rem provides clear visual separation between cards, max-width: 1200px and margin: 0 auto centers and constrains the grid */
 .units-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+    gap: 2rem;
     padding: 2rem 3rem 4rem 3rem;
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: center;
 }
 
-/* Unit Card - Title Card Style */
+/* Unit Card - Title Card Style - Individual unit card styling with white background, rounded corners, shadow for depth, smooth transitions on hover, cards remain separated with consistent sizing */
 .unit-card {
     background: var(--aws-white);
     border-radius: 12px;
@@ -112,13 +127,16 @@ main {
     text-decoration: none;
     display: block;
     color: inherit;
+    max-width: 100%;
 }
 
+/* Unit card hover effect - lifts card up and increases shadow for interactive feedback */
 .unit-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Card Header - Flexbox layout for card title and badge, space-between distributes items to opposite ends */
 .card-header {
     display: flex;
     justify-content: space-between;
@@ -126,6 +144,7 @@ main {
     margin-bottom: 1rem;
 }
 
+/* Card Title - Unit name styling, large font size, bold weight, AWS brand color */
 .card-title {
     font-size: 1.25rem;
     color: var(--aws-dark-blue);
@@ -133,6 +152,7 @@ main {
     font-weight: 700;
 }
 
+/* Card Badge - AWS badge indicator, light blue background with rounded pill shape */
 .card-badge {
     background: #ebf8ff;
     color: var(--aws-light-blue);
@@ -143,6 +163,7 @@ main {
     white-space: nowrap;
 }
 
+/* Learn Button - Full-width call-to-action button, AWS brand color background, smooth hover transition */
 .learn-button {
     width: 100%;
     padding: 0.75rem;
@@ -156,17 +177,19 @@ main {
     font-size: 1rem;
 }
 
+/* Learn button hover effect - changes to lighter blue on hover */
 .learn-button:hover {
     background: var(--aws-light-blue);
 }
 
-/* Unit Detail Page Styles */
+/* Unit Detail Page Styles - Container for unit content pages with centered layout and max-width constraint */
 .unit-content {
     padding: 2rem 3rem 4rem 3rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Content Section - Individual content blocks on unit pages, white background with subtle shadow and left border accent */
 .content-section {
     background-color: var(--aws-white);
     padding: 3rem;
@@ -176,6 +199,7 @@ main {
     border-radius: 8px;
 }
 
+/* Content section heading - large, bold, AWS brand color */
 .content-section h2 {
     color: var(--aws-dark-blue);
     font-size: 2rem;
@@ -183,6 +207,7 @@ main {
     margin-bottom: 1.5rem;
 }
 
+/* Content section paragraph - dark gray text with increased line-height for readability, preserves line breaks */
 .content-section p {
     color: var(--aws-dark-gray);
     line-height: 1.8;
@@ -190,6 +215,7 @@ main {
     margin-bottom: 1.5rem;
 }
 
+/* Content section images - responsive images that scale to container width, rounded corners, shadow for depth */
 .content-section img {
     width: 100%;
     max-width: 100%;
@@ -199,6 +225,7 @@ main {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+/* Back Link - Navigation link to return to homepage, white text with hover effect */
 .back-link {
     display: inline-block;
     color: var(--aws-white);
@@ -209,15 +236,17 @@ main {
     transition: color 0.3s;
 }
 
+/* Back link hover effect - changes to dark blue on hover */
 .back-link:hover {
     color: var(--aws-dark-blue);
 }
 
-/* Unit 5 Card-Based Layout */
+/* Unit 5 Card-Based Layout - Header section for unit pages with title and keywords */
 .unit-header {
     margin-bottom: 2rem;
 }
 
+/* Unit header title - large, bold heading in AWS brand color */
 .unit-header h1 {
     font-size: 2.5rem;
     color: var(--aws-dark-blue);
@@ -225,17 +254,20 @@ main {
     font-weight: 700;
 }
 
+/* Unit keywords - muted gray text with highlighted keywords in light blue */
 .unit-keywords {
     color: #718096;
     font-size: 1rem;
     margin-bottom: 2rem;
 }
 
+/* Unit keywords span - highlighted keywords in light blue with bold weight */
 .unit-keywords span {
     color: var(--aws-light-blue);
     font-weight: 600;
 }
 
+/* Unit Overview - Summary section with light gray background and left border accent */
 .unit-overview {
     background-color: var(--aws-light-gray);
     padding: 2rem;
@@ -244,6 +276,7 @@ main {
     border-left: 4px solid var(--aws-orange);
 }
 
+/* Unit overview heading - large, bold, AWS brand color */
 .unit-overview h2 {
     color: var(--aws-dark-blue);
     font-size: 1.75rem;
@@ -251,12 +284,14 @@ main {
     font-weight: 700;
 }
 
+/* Unit overview paragraph - dark gray text with increased line-height for readability */
 .unit-overview p {
     color: var(--aws-dark-gray);
     line-height: 1.8;
     font-size: 1rem;
 }
 
+/* Cards Grid - Responsive grid layout for info cards, auto-fit with minmax creates flexible columns */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -264,6 +299,7 @@ main {
     margin-top: 2rem;
 }
 
+/* Info Card - Individual information card with white background, rounded corners, shadow, smooth hover transitions */
 .info-card {
     background: var(--aws-white);
     border-radius: 12px;
@@ -272,11 +308,13 @@ main {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Info card hover effect - lifts card up and increases shadow for interactive feedback */
 .info-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Info card heading - large, bold, AWS brand color with orange bottom border accent */
 .info-card h3 {
     font-size: 1.25rem;
     color: var(--aws-dark-blue);
@@ -286,6 +324,7 @@ main {
     padding-bottom: 0.5rem;
 }
 
+/* Info card paragraph - dark gray text with comfortable line-height */
 .info-card > p {
     color: var(--aws-dark-gray);
     line-height: 1.6;
@@ -293,10 +332,12 @@ main {
     font-size: 0.95rem;
 }
 
+/* Card Details - Container for detailed information lists and paragraphs within info cards */
 .card-details {
     margin: 1rem 0;
 }
 
+/* Card details strong - bold labels in AWS brand color, displayed as block elements */
 .card-details strong {
     color: var(--aws-dark-blue);
     display: block;
@@ -304,11 +345,13 @@ main {
     font-size: 0.95rem;
 }
 
+/* Card details unordered list - indented list with no default padding */
 .card-details ul {
     margin: 0.5rem 0 0 1.5rem;
     padding: 0;
 }
 
+/* Card details list item - dark gray text with spacing between items */
 .card-details li {
     color: var(--aws-dark-gray);
     margin-bottom: 0.5rem;
@@ -316,12 +359,14 @@ main {
     line-height: 1.5;
 }
 
+/* Card details paragraph - dark gray text with top margin */
 .card-details p {
     color: var(--aws-dark-gray);
     margin-top: 0.5rem;
     font-size: 0.9rem;
 }
 
+/* Card Note - Highlighted note section with light blue background and left border accent */
 .card-note {
     margin-top: 1rem;
     padding: 0.75rem;
@@ -330,32 +375,38 @@ main {
     border-radius: 4px;
 }
 
+/* Card note strong - bold labels in light blue */
 .card-note strong {
     color: var(--aws-light-blue);
     font-size: 0.9rem;
 }
 
+/* Card note text - dark gray text with comfortable line-height */
 .card-note {
     color: var(--aws-dark-gray);
     font-size: 0.875rem;
     line-height: 1.5;
 }
 
+/* Card note paragraph - dark gray text with no margin */
 .card-note p {
     margin: 0;
     color: var(--aws-dark-gray);
 }
 
+/* Summary Card - Full-width card spanning all grid columns, gradient background with light blue border */
 .summary-card {
     grid-column: 1 / -1;
     background: linear-gradient(135deg, #ebf8ff 0%, #f0f9ff 100%);
     border: 2px solid var(--aws-light-blue);
 }
 
+/* Summary card heading - uses light blue border instead of orange */
 .summary-card h3 {
     border-bottom-color: var(--aws-light-blue);
 }
 
+/* Card Image - Responsive images within cards, rounded corners, shadow for depth */
 .card-image {
     width: 100%;
     max-width: 100%;
@@ -365,6 +416,7 @@ main {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+/* Footer - Site footer with AWS brand colors, centered text, consistent styling with header */
 footer {
     background-color: var(--aws-dark-blue);
     color: var(--aws-white);
