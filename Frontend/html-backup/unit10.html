@@ -1,0 +1,131 @@
+<!-- 
+    Justin Choi
+    Period 6 
+    January 3, 2026
+    Lang Track 
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 10 - AWS Academy</title>
+    <link rel="stylesheet" href="homepage.css?v=1.1">
+</head>
+<body>
+    <header>
+        <h1><a href="homepage.html">Home</a></h1>
+        <nav>
+            <ul>
+                <li><a href="unit1.html">Unit 1</a></li>
+                <li><a href="unit2.html">Unit 2</a></li>
+                <li><a href="unit3.html">Unit 3</a></li>
+                <li><a href="unit4.html">Unit 4</a></li>
+                <li><a href="unit5.html">Unit 5</a></li>
+                <li><a href="unit6.html">Unit 6</a></li>
+                <li><a href="unit7.html">Unit 7</a></li>
+                <li><a href="unit8.html">Unit 8</a></li>
+                <li><a href="unit9.html">Unit 9</a></li>
+                <li><a href="unit10.html" class="active">Unit 10</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main data-page-id="10">
+        <div class="unit-content">
+            <a href="homepage.html" class="back-link">← Back to Home</a>
+            
+            <div class="unit-header">
+                <h1>Unit 10 – Auto Scaling and Monitoring</h1>
+                <div class="unit-keywords">
+                    <span>Elastic Load Balancing</span> • <span>Amazon CloudWatch</span> • <span>Amazon EC2 Auto Scaling</span>
+                </div>
+            </div>
+
+            <div class="unit-overview">
+                <h2>Unit 10 Overview</h2>
+                <p>AWS Unit 10 focuses on monitoring system performance and automatically scaling resources to handle changing workloads. In cloud computing environments, demand for resources can change rapidly depending on user traffic, application usage, or time of day. To maintain performance and availability, systems must be able to adjust their resources automatically.</p>
+                <p>AWS provides several services that help organizations monitor infrastructure and respond to changes in demand. Services such as Amazon CloudWatch, Elastic Load Balancing, and Amazon EC2 Auto Scaling work together to maintain application performance and ensure systems remain reliable and efficient. These services allow organizations to automatically scale resources, distribute incoming traffic, and monitor system health in real time.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="info-card">
+                    <h3>Autoscaling and Monitoring Basics</h3>
+                    <p>Monitoring and scaling are essential parts of cloud architecture. Monitoring allows organizations to track system performance, detect potential problems, and gather data about how applications behave under different workloads.</p>
+                    <p>Auto scaling helps ensure that applications have the right amount of computing resources at all times. When demand increases, additional resources are automatically added to handle the load. When demand decreases, resources are removed to reduce unnecessary costs.</p>
+                    <p>By combining monitoring tools with automated scaling systems, AWS allows organizations to build systems that respond dynamically to changing conditions.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Elastic Load Balancing (ELB)</h3>
+                    <p>Elastic Load Balancing is a service that automatically distributes incoming network traffic across multiple computing resources, such as EC2 instances, containers, or IP addresses. By spreading traffic across multiple servers, load balancing improves application availability and reliability.</p>
+                    <p>Load balancers ensure that no single server becomes overloaded with traffic. If one server becomes unavailable or fails, the load balancer redirects traffic to other healthy servers. This helps maintain system uptime and ensures that users continue to receive responses from the application.</p>
+                    <p>Elastic Load Balancing also integrates with other AWS services such as Auto Scaling, allowing systems to automatically add or remove servers based on current demand.</p>
+                    <img src="../Pictures/Elastic Load Balancing.png" alt="Elastic Load Balancing diagram" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>Types of Elastic Load Balancers</h3>
+                    <p>AWS provides several types of load balancers designed for different types of traffic.</p>
+                    <p><strong>Application Load Balancer (ALB)</strong> operates at the application layer and is designed for HTTP and HTTPS traffic. It is commonly used for web applications and microservices architectures.</p>
+                    <p><strong>Network Load Balancer (NLB)</strong> operates at the transport layer and is designed for high-performance applications requiring extremely low latency.</p>
+                    <p><strong>Gateway Load Balancer</strong> is used for deploying and scaling third-party network appliances such as firewalls or security monitoring tools.</p>
+                    <p>Each load balancer type provides different capabilities depending on the needs of the application.</p>
+                    <img src="../Pictures/Uses of ELB.png" alt="Examples and uses of Elastic Load Balancing" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>Amazon CloudWatch</h3>
+                    <p>Amazon CloudWatch is a monitoring and observability service that provides data and insights about AWS resources and applications. It collects metrics, logs, and events from AWS services and allows organizations to track system performance over time.</p>
+                    <p>CloudWatch helps administrators monitor CPU usage, network traffic, disk activity, and many other system metrics. By analyzing this data, organizations can identify performance issues, detect anomalies, and ensure systems are functioning properly.</p>
+                    <p>CloudWatch also supports alarms and notifications. When certain thresholds are reached, such as high CPU usage or increased latency, CloudWatch can trigger alerts or automated actions.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>CloudWatch Monitoring Features</h3>
+                    <p>CloudWatch provides several powerful features that help monitor cloud environments.</p>
+                    <p><strong>Metrics</strong> track performance data such as CPU utilization, memory usage, and network activity.</p>
+                    <p><strong>Logs</strong> collect detailed records of application activity and system events, helping administrators troubleshoot issues.</p>
+                    <p><strong>Alarms</strong> allow administrators to define thresholds that trigger notifications or automated responses when conditions change.</p>
+                    <p>These features make CloudWatch an essential tool for maintaining system visibility and operational awareness.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Amazon EC2 Auto Scaling</h3>
+                    <p>Amazon EC2 Auto Scaling automatically adjusts the number of EC2 instances in a system based on demand. This ensures applications have enough computing capacity during high traffic while minimizing costs during periods of low usage.</p>
+                    <p>Auto Scaling works by monitoring system metrics such as CPU utilization or network traffic. When predefined thresholds are reached, Auto Scaling launches additional instances to handle the increased workload. When demand decreases, it terminates unnecessary instances to reduce costs.</p>
+                    <p>This process ensures that applications remain responsive and efficient regardless of changes in traffic.</p>
+                    <img src="../Pictures/Autoscaling.png" alt="EC2 Auto Scaling diagram" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>Auto Scaling Benefits</h3>
+                    <p>Auto Scaling provides several important benefits for cloud systems.</p>
+                    <p>One key benefit is improved availability. By automatically adding instances during traffic spikes, systems can continue operating smoothly even under heavy demand.</p>
+                    <p>Another benefit is cost efficiency. Organizations only pay for the resources they need at a given time because instances are automatically removed when they are no longer required.</p>
+                    <p>Auto Scaling also improves system resilience by replacing unhealthy instances and maintaining the desired number of running servers.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Integration of Monitoring and Scaling</h3>
+                    <p>Monitoring and scaling services work together to maintain system performance. CloudWatch collects metrics about system behavior and sends this data to Auto Scaling policies.</p>
+                    <p>When CloudWatch detects that system metrics exceed defined thresholds, it can trigger Auto Scaling to launch additional instances. Similarly, when usage decreases, Auto Scaling reduces the number of instances to conserve resources.</p>
+                    <p>Elastic Load Balancing then distributes traffic across the available instances, ensuring that no single server becomes overloaded.</p>
+                    <p>This integration allows AWS systems to automatically adapt to changing workloads without manual intervention.</p>
+                </div>
+
+                <div class="info-card summary-card">
+                    <h3>Unit 10 Summary</h3>
+                    <p>AWS Unit 10 focuses on maintaining system performance through monitoring and automated scaling. Services such as Amazon CloudWatch provide visibility into system performance, while Elastic Load Balancing distributes traffic across resources to improve availability.</p>
+                    <p>Amazon EC2 Auto Scaling ensures that applications always have the right amount of computing capacity by automatically adding or removing instances based on demand.</p>
+                    <p>Together, these services allow organizations to build highly available, scalable, and cost-efficient cloud systems that adapt automatically to changing workloads.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 AWS Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

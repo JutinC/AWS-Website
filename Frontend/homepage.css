@@ -1,3 +1,10 @@
+/*
+Justin Choi
+Period 6 
+January 3, 2026
+Lang Track 
+*/
+
 /* AWS Theme Color Variables - CSS custom properties for consistent theming, colors match AWS brand guidelines, can be easily updated in one place, all color values defined here and referenced throughout stylesheet */
 :root {
     --aws-dark-blue: #53b6cfdb;    /* Primary brand color - used for headers, buttons, and accents */
@@ -128,12 +135,19 @@ main {
     display: block;
     color: inherit;
     max-width: 100%;
+    cursor: pointer;
 }
 
 /* Unit card hover effect - lifts card up and increases shadow for interactive feedback */
 .unit-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Keyboard focus - visible focus ring */
+.unit-card:focus {
+    outline: 3px solid rgba(20, 110, 180, 0.35);
+    outline-offset: 3px;
 }
 
 /* Card Header - Flexbox layout for card title and badge, space-between distributes items to opposite ends */
@@ -163,22 +177,29 @@ main {
     white-space: nowrap;
 }
 
-/* Learn Button - Full-width call-to-action button, AWS brand color background, smooth hover transition */
-.learn-button {
-    width: 100%;
-    padding: 0.75rem;
-    background: var(--aws-dark-blue);
-    color: var(--aws-white);
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    font-size: 1rem;
+/* Card Overview - Brief unit summary text shown on homepage cards */
+.card-overview {
+    margin: 0;
+    color: #000000 !important;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
-/* Learn button hover effect - changes to lighter blue on hover */
-.learn-button:hover {
+/* Card CTA - Button-like label to make clicking feel intentional (card is still the link) */
+.card-cta {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    background: var(--aws-dark-blue);
+    color: var(--aws-white);
+    font-weight: 700;
+    font-size: 0.95rem;
+    user-select: none;
+    text-decoration: none;
+}
+
+.unit-card:hover .card-cta {
     background: var(--aws-light-blue);
 }
 
@@ -297,6 +318,7 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
+    overflow: visible;
 }
 
 /* Info Card - Individual information card with white background, rounded corners, shadow, smooth hover transitions */
@@ -306,6 +328,9 @@ main {
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: var(--aws-dark-gray) !important;
+    overflow: visible;
+    min-width: 0;
 }
 
 /* Info card hover effect - lifts card up and increases shadow for interactive feedback */
@@ -325,11 +350,37 @@ main {
 }
 
 /* Info card paragraph - dark gray text with comfortable line-height */
-.info-card > p {
-    color: var(--aws-dark-gray);
+.info-card p {
+    color: var(--aws-dark-gray) !important;
     line-height: 1.6;
     margin-bottom: 1rem;
     font-size: 0.95rem;
+}
+
+/* Info card list items - dark gray text to match paragraphs */
+.info-card ul {
+    color: var(--aws-dark-gray) !important;
+}
+
+.info-card ul li {
+    color: var(--aws-dark-gray) !important;
+}
+
+/* Info card list item text and strong tags - ensure all text is dark gray, including nested elements */
+.info-card ul li,
+.info-card ul li *,
+.info-card ul li strong,
+.info-card ul li span,
+.info-card ul li em {
+    color: var(--aws-dark-gray) !important;
+}
+
+/* Override any inherited color from body for all text inside info-card lists - most specific rule */
+.info-card ul *,
+.info-card ul li *,
+div.info-card ul li,
+div.info-card ul li * {
+    color: var(--aws-dark-gray) !important;
 }
 
 /* Card Details - Container for detailed information lists and paragraphs within info cards */
@@ -345,10 +396,12 @@ main {
     font-size: 0.95rem;
 }
 
-/* Card details unordered list - indented list with no default padding */
+/* Card details unordered list — inside markers avoid clipping in first grid column (outside + zero ul padding clips markers) */
 .card-details ul {
-    margin: 0.5rem 0 0 1.5rem;
+    margin: 0.5rem 0 0 0;
     padding: 0;
+    list-style-type: disc;
+    list-style-position: inside;
 }
 
 /* Card details list item - dark gray text with spacing between items */
@@ -357,6 +410,11 @@ main {
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
     line-height: 1.5;
+    padding-left: 0;
+}
+
+.card-details li::marker {
+    color: var(--aws-dark-gray);
 }
 
 /* Card details paragraph - dark gray text with top margin */
@@ -394,9 +452,13 @@ main {
     color: var(--aws-dark-gray);
 }
 
+/* Summary row spans full grid (wrapper is grid item when using card-with-actions) */
+.summary-card-wrap {
+    grid-column: 1 / -1;
+}
+
 /* Summary Card - Full-width card spanning all grid columns, gradient background with light blue border */
 .summary-card {
-    grid-column: 1 / -1;
     background: linear-gradient(135deg, #ebf8ff 0%, #f0f9ff 100%);
     border: 2px solid var(--aws-light-blue);
 }
@@ -414,6 +476,191 @@ main {
     border-radius: 8px;
     margin-top: 1rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Unit page CRUD toolbar */
+.unit-crud-toolbar {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn-add-card {
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--aws-dark-blue);
+    color: var(--aws-white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.btn-add-card:hover {
+    background: var(--aws-light-blue);
+}
+
+/* Card wrapper: content + edit/delete */
+.card-with-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.card-with-actions .info-card {
+    flex: 1;
+}
+
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.btn-card-edit,
+.btn-card-delete {
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid #cbd5e0;
+    background: var(--aws-white);
+    color: var(--aws-dark-blue);
+}
+
+.btn-card-edit:hover {
+    background: #ebf8ff;
+    border-color: var(--aws-light-blue);
+}
+
+.btn-card-delete {
+    color: #c53030;
+    border-color: #feb2b2;
+}
+
+.btn-card-delete:hover {
+    background: #fff5f5;
+}
+
+.cards-grid-empty,
+.cards-grid-error {
+    grid-column: 1 / -1;
+    color: var(--aws-dark-gray);
+    font-size: 0.95rem;
+    padding: 1rem 0;
+}
+
+.cards-grid-error {
+    color: #c53030;
+}
+
+/* Add / edit card modal */
+.unit-card-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.unit-card-modal.is-open {
+    display: flex;
+}
+
+.unit-card-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.unit-card-modal-panel {
+    position: relative;
+    background: var(--aws-white);
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    max-width: 560px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: auto;
+    padding: 1.5rem;
+}
+
+.unit-card-modal-title {
+    margin: 0 0 1rem 0;
+    font-size: 1.35rem;
+    color: var(--aws-dark-blue);
+}
+
+.unit-card-form label {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--aws-dark-gray);
+}
+
+.unit-card-form input[type="text"],
+.unit-card-form input[type="number"],
+.unit-card-form textarea {
+    display: block;
+    width: 100%;
+    margin-top: 0.35rem;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.unit-card-form textarea {
+    resize: vertical;
+    min-height: 160px;
+}
+
+.field-hint {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #718096;
+}
+
+.unit-card-modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+.btn-modal-cancel,
+.btn-modal-save {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-size: 0.95rem;
+}
+
+.btn-modal-cancel {
+    background: #edf2f7;
+    color: var(--aws-dark-gray);
+}
+
+.btn-modal-cancel:hover {
+    background: #e2e8f0;
+}
+
+.btn-modal-save {
+    background: var(--aws-dark-blue);
+    color: var(--aws-white);
+}
+
+.btn-modal-save:hover {
+    background: var(--aws-light-blue);
 }
 
 /* Footer - Site footer with AWS brand colors, centered text, consistent styling with header */

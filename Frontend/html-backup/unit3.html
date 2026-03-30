@@ -1,0 +1,128 @@
+<!-- 
+    Justin Choi
+    Period 6 
+    January 3, 2026
+    Lang Track 
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3 - AWS Global Infrastructure Overview</title>
+    <link rel="stylesheet" href="homepage.css?v=1.0">
+    <script src="unit.js?v=1.0" defer></script>
+</head>
+<body>
+    <header>
+        <h1><a href="homepage.html">Home</a></h1>
+        <nav>
+            <ul>
+                <li><a href="unit1.html">Unit 1</a></li>
+                <li><a href="unit2.html">Unit 2</a></li>
+                <li><a href="unit3.html" class="active">Unit 3</a></li>
+                <li><a href="unit4.html">Unit 4</a></li>
+                <li><a href="unit5.html">Unit 5</a></li>
+                <li><a href="unit6.html">Unit 6</a></li>
+                <li><a href="unit7.html">Unit 7</a></li>
+                <li><a href="unit8.html">Unit 8</a></li>
+                <li><a href="unit9.html">Unit 9</a></li>
+                <li><a href="unit10.html">Unit 10</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main data-page-id="3">
+        <div class="unit-content">
+            <a href="homepage.html" class="back-link">← Back to Home</a>
+            
+            <div class="unit-header">
+                <h1>Unit 3 – AWS Global Infrastructure</h1>
+                <div class="unit-keywords">
+                    <span>Regions</span> • <span>Availability Zones</span> • <span>Edge Locations</span>
+                </div>
+            </div>
+
+            <div class="unit-overview">
+                <h2>Unit 3 Overview</h2>
+                <p>AWS Unit 3 focuses on the global infrastructure that allows AWS to deliver cloud services reliably and efficiently around the world. Cloud computing depends heavily on physical data centers, networking systems, and geographic distribution to ensure high availability and performance.</p>
+                <p>AWS has one of the largest global infrastructures, consisting of Regions, Availability Zones, and Edge Locations. This structure allows applications to run closer to users, reduce latency, and maintain availability even when failures occur.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="info-card">
+                    <h3>AWS Global Infrastructure</h3>
+                    <p>AWS global infrastructure refers to the physical and virtual systems that support AWS services worldwide, including data centers, networking, and locations that host cloud resources.</p>
+                    <p>It is designed to provide high availability, support fault tolerance, deliver low latency, and enable global scalability by distributing resources across multiple geographic areas.</p>
+                    <img src="../Pictures/Unit 3.png" alt="Unit 3 image" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>AWS Regions</h3>
+                    <p>An AWS Region is a geographic area that contains multiple data centers. Each Region is isolated from others to improve fault tolerance and security.</p>
+                    <div class="card-details">
+                        <strong>Choosing a Region:</strong>
+                        <ul>
+                            <li>Proximity to users to reduce latency.</li>
+                            <li>Compliance and data residency requirements.</li>
+                            <li>Service availability and feature support.</li>
+                            <li>Cost differences between Regions.</li>
+                        </ul>
+                    </div>
+                    <p>Using multiple Regions can improve disaster recovery and ensure applications remain available during large-scale outages.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Availability Zones (AZs)</h3>
+                    <p>Availability Zones are isolated data centers within a Region. They are physically separated but connected with high-speed, low-latency networking.</p>
+                    <p>AZs are designed so that failures in one zone do not affect others. By deploying resources across multiple AZs, organizations can build highly available systems that continue running even if one data center fails.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Edge Locations</h3>
+                    <p>Edge locations are smaller data centers located closer to end users. They are primarily used for content delivery and caching through services like Amazon CloudFront.</p>
+                    <p>Delivering content from edge locations reduces latency, improves user experience, and enables fast global content delivery instead of sending data from a single central Region.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>High Availability &amp; Fault Tolerance</h3>
+                    <p>AWS infrastructure is designed to support both high availability and fault tolerance.</p>
+                    <div class="card-details">
+                        <strong>Key Concepts:</strong>
+                        <ul>
+                            <li><strong>High Availability</strong> – Systems are designed to remain operational with minimal downtime by using multiple AZs and Regions.</li>
+                            <li><strong>Fault Tolerance</strong> – Systems can continue operating even when components fail through redundancy and automatic failover.</li>
+                        </ul>
+                    </div>
+                    <p>Using multiple AZs and Regions, along with redundant networking and storage, helps applications stay online even during failures.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>AWS Services Overview</h3>
+                    <p>AWS offers many services that run on top of its global infrastructure. These services are organized into categories based on their function.</p>
+                    <div class="card-details">
+                        <strong>Major Service Categories:</strong>
+                        <ul>
+                            <li><strong>Compute</strong> – Run applications (e.g., EC2, Lambda).</li>
+                            <li><strong>Storage</strong> – Store and manage data (e.g., S3, EBS).</li>
+                            <li><strong>Database</strong> – Manage structured and unstructured data (e.g., RDS, DynamoDB).</li>
+                            <li><strong>Networking</strong> – Connect resources and manage traffic (e.g., VPC, Route 53).</li>
+                            <li><strong>Security</strong> – Protect systems and data (e.g., IAM, KMS).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card summary-card">
+                    <h3>Unit 3 Summary</h3>
+                    <p>AWS Unit 3 explains how AWS uses a global network of Regions, Availability Zones, and Edge Locations to deliver cloud services efficiently.</p>
+                    <p>Regions provide geographic separation, AZs enable high availability, and edge locations improve performance for users worldwide. Understanding this infrastructure is essential for designing systems that can handle failures, scale globally, and deliver consistent performance.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 AWS Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

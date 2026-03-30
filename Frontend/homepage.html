@@ -17,11 +17,11 @@
     <!-- Page title displayed in browser tab and search engine results -->
     <title>AWS Academy - Home</title>
     
-    <!-- External stylesheet link with cache-busting version parameter - ?v=1.0 ensures browsers fetch latest CSS after updates -->
-    <link rel="stylesheet" href="homepage.css?v=1.0">
+    <!-- External stylesheet link with cache-busting version parameter - bump version to force refresh -->
+    <link rel="stylesheet" href="homepage.css?v=1.2">
     
-    <!-- External JavaScript file loaded with defer attribute - defer ensures script executes after HTML parsing is complete, prevents blocking page rendering -->
-    <script src="homepage.js" defer></script>
+    <!-- External JavaScript file loaded with defer attribute - bump version to force refresh -->
+    <script src="homepage.js?v=1.2" defer></script>
 </head>
 <body>
     <!-- Header Section - Contains site logo/title and main navigation menu, styled with AWS brand colors (dark blue background, white text) -->
@@ -29,7 +29,7 @@
         <!-- Home link - clicking returns to homepage -->
         <h1><a href="homepage.html">Home</a></h1>
         
-        <!-- Navigation Menu - Provides links to all course units (Unit 1 through Unit 7), styled as horizontal list items for easy navigation -->
+        <!-- Navigation Menu - Provides links to all course units (Unit 1 through Unit 10), styled as horizontal list items for easy navigation -->
         <nav>
             <ul>
                 <!-- Navigation links to individual unit pages -->
@@ -40,6 +40,9 @@
                 <li><a href="unit5.html">Unit 5</a></li>
                 <li><a href="unit6.html">Unit 6</a></li>
                 <li><a href="unit7.html">Unit 7</a></li>
+                <li><a href="unit8.html">Unit 8</a></li>
+                <li><a href="unit9.html">Unit 9</a></li>
+                <li><a href="unit10.html">Unit 10</a></li>
             </ul>
         </nav>
     </header>

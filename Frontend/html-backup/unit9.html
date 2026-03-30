@@ -1,0 +1,133 @@
+<!-- 
+    Justin Choi
+    Period 6 
+    January 3, 2026
+    Lang Track 
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 9 - AWS Academy</title>
+    <link rel="stylesheet" href="homepage.css?v=1.1">
+</head>
+<body>
+    <header>
+        <h1><a href="homepage.html">Home</a></h1>
+        <nav>
+            <ul>
+                <li><a href="unit1.html">Unit 1</a></li>
+                <li><a href="unit2.html">Unit 2</a></li>
+                <li><a href="unit3.html">Unit 3</a></li>
+                <li><a href="unit4.html">Unit 4</a></li>
+                <li><a href="unit5.html">Unit 5</a></li>
+                <li><a href="unit6.html">Unit 6</a></li>
+                <li><a href="unit7.html">Unit 7</a></li>
+                <li><a href="unit8.html">Unit 8</a></li>
+                <li><a href="unit9.html" class="active">Unit 9</a></li>
+                <li><a href="unit10.html">Unit 10</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main data-page-id="9">
+        <div class="unit-content">
+            <a href="homepage.html" class="back-link">← Back to Home</a>
+            
+            <div class="unit-header">
+                <h1>Unit 9 – Cloud Architecture</h1>
+                <div class="unit-keywords">
+                    <span>AWS Well-Architected Framework</span> • <span>Design Principles</span> • <span>Trusted Advisor</span>
+                </div>
+            </div>
+
+            <div class="unit-overview">
+                <h2>Unit 9 Overview</h2>
+                <p>AWS Unit 9 focuses on cloud architecture and the principles used to design scalable, reliable, secure, and cost-efficient systems in the cloud. Instead of simply deploying resources, architects must design systems that perform well under different conditions while remaining secure and resilient.</p>
+                <p>AWS provides guidance through the AWS Well-Architected Framework, which is a set of best practices used to evaluate and improve cloud architectures. The framework helps organizations understand whether their systems follow proven design patterns and whether they can handle growth, failures, and changing workloads.</p>
+                <p>By applying the principles of the Well-Architected Framework, organizations can build systems that operate efficiently, maintain security, and adapt to future demands.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="info-card">
+                    <h3>AWS Well-Architected Framework</h3>
+                    <p>The AWS Well-Architected Framework is a collection of architectural best practices that help organizations design and operate reliable cloud systems. It provides guidance on building infrastructure that is secure, efficient, resilient, and cost-effective.</p>
+                    <p>The framework is built around several pillars, each representing a critical area of cloud architecture. These pillars provide guidelines for evaluating existing systems and improving them through continuous monitoring and design improvements.</p>
+                    <p>Architects regularly review their systems against these pillars to identify weaknesses and opportunities for optimization. This process helps ensure that cloud applications remain stable, secure, and scalable as they grow.</p>
+                    <img src="../Pictures/Unit 9 Pillars.png" alt="AWS Well-Architected Framework pillars" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>Cloud Design Principles</h3>
+                    <p>AWS recommends several design principles when building cloud architectures. These principles guide architects in designing systems that are flexible and capable of adapting to changing workloads.</p>
+                    <p>One important principle is stopping the need to guess infrastructure capacity. In traditional systems, organizations often overestimate resource needs. Cloud computing allows resources to scale automatically as demand increases.</p>
+                    <p>Another principle is automation. Automating infrastructure deployment and management reduces human error and increases efficiency. Infrastructure can be defined using code, allowing systems to be deployed quickly and consistently.</p>
+                    <p>Architects are also encouraged to design systems that can evolve over time. Instead of building rigid infrastructure, cloud architectures should allow services to be replaced, scaled, or improved without major disruptions.</p>
+                    <p>Finally, architects should measure system performance and use data to guide decisions, ensuring systems improve continuously.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Operational Excellence</h3>
+                    <p>The Operational Excellence pillar focuses on running and monitoring systems effectively while continually improving operational processes.</p>
+                    <p>Organizations achieve operational excellence by automating routine tasks, monitoring system performance, and responding quickly to operational events. Automation reduces manual work and allows systems to scale efficiently.</p>
+                    <p>Another important aspect is learning from operational experiences. Teams analyze system behavior and incidents to improve processes and prevent future problems.</p>
+                    <p>This pillar encourages continuous improvement, ensuring that systems become more efficient and reliable over time.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Security</h3>
+                    <p>The Security pillar focuses on protecting data, applications, and infrastructure from unauthorized access or threats. Security is built into every layer of cloud architecture, including identity management, encryption, and monitoring.</p>
+                    <p>AWS provides tools that allow organizations to manage access using identity and access management (IAM). Encryption helps protect sensitive data both while it is stored and while it is transmitted across networks.</p>
+                    <p>Monitoring systems track activity and detect suspicious behavior, allowing organizations to respond quickly to security incidents.</p>
+                    <p>By implementing strong security practices, organizations can protect sensitive information and maintain trust with their users.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Reliability</h3>
+                    <p>The Reliability pillar focuses on ensuring that systems can recover from failures and continue operating even when unexpected events occur.</p>
+                    <p>Reliable systems use redundancy, meaning multiple components perform the same function so that if one fails, another can take over. AWS supports this by allowing resources to be distributed across multiple Availability Zones.</p>
+                    <p>Systems can also scale automatically when demand increases, ensuring applications remain available even during traffic spikes.</p>
+                    <p>Another important concept is fault tolerance, which allows systems to continue functioning even when parts of the infrastructure fail.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Performance Efficiency</h3>
+                    <p>The Performance Efficiency pillar focuses on using computing resources efficiently to meet system requirements.</p>
+                    <p>Cloud systems should select the right resources for the workload, such as choosing the appropriate instance types, storage solutions, and database services.</p>
+                    <p>Performance efficiency also involves monitoring system behavior and adjusting resources when necessary. Because cloud technologies evolve rapidly, organizations should continually evaluate new services and features that may improve system performance.</p>
+                    <p>By optimizing resources, organizations can ensure applications perform well while avoiding unnecessary resource usage.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Cost Optimization</h3>
+                    <p>The Cost Optimization pillar focuses on avoiding unnecessary costs while maximizing the value gained from cloud resources.</p>
+                    <p>In cloud computing, organizations pay only for the resources they use. Monitoring usage and selecting the correct pricing models can significantly reduce costs.</p>
+                    <p>Techniques such as auto-scaling, resource monitoring, and choosing appropriate instance types help ensure that organizations do not overpay for unused resources.</p>
+                    <p>Cost optimization also involves analyzing usage patterns and continuously adjusting infrastructure to match current demand.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>AWS Trusted Advisor</h3>
+                    <p>AWS Trusted Advisor is a service that analyzes an AWS environment and provides recommendations for improving infrastructure.</p>
+                    <p>Trusted Advisor checks systems across several categories, including cost optimization, security, performance, reliability, and service limits.</p>
+                    <p>For example, Trusted Advisor may identify unused resources that are still generating costs, security settings that could be improved, or performance issues that may affect applications.</p>
+                    <p>By following these recommendations, organizations can improve system efficiency and ensure their cloud architecture follows AWS best practices.</p>
+                </div>
+
+                <div class="info-card summary-card">
+                    <h3>Unit 9 Summary</h3>
+                    <p>AWS Unit 9 focuses on designing cloud systems using the AWS Well-Architected Framework. The framework provides guidelines for building systems that are secure, reliable, efficient, and cost-effective.</p>
+                    <p>The pillars of operational excellence, security, reliability, performance efficiency, and cost optimization help organizations evaluate their architectures and improve them over time.</p>
+                    <p>Tools such as AWS Trusted Advisor further support these principles by analyzing cloud environments and providing actionable recommendations for improvement.</p>
+                    <p>Understanding these architectural principles helps organizations build scalable and resilient systems that can adapt to changing workloads and business needs.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 AWS Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!-- 
+    Justin Choi
+    Period 6 
+    January 3, 2026
+    Lang Track 
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2 - Cloud Economics and Billing</title>
+    <link rel="stylesheet" href="homepage.css?v=1.0">
+    <script src="unit.js?v=1.0" defer></script>
+</head>
+<body>
+    <header>
+        <h1><a href="homepage.html">Home</a></h1>
+        <nav>
+            <ul>
+                <li><a href="unit1.html">Unit 1</a></li>
+                <li><a href="unit2.html" class="active">Unit 2</a></li>
+                <li><a href="unit3.html">Unit 3</a></li>
+                <li><a href="unit4.html">Unit 4</a></li>
+                <li><a href="unit5.html">Unit 5</a></li>
+                <li><a href="unit6.html">Unit 6</a></li>
+                <li><a href="unit7.html">Unit 7</a></li>
+                <li><a href="unit8.html">Unit 8</a></li>
+                <li><a href="unit9.html">Unit 9</a></li>
+                <li><a href="unit10.html">Unit 10</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main data-page-id="2">
+        <div class="unit-content">
+            <a href="homepage.html" class="back-link">← Back to Home</a>
+            
+            <div class="unit-header">
+                <h1>Unit 2 – Cloud Economics and Billing</h1>
+                <div class="unit-keywords">
+                    <span>AWS Pricing</span> • <span>Billing &amp; TCO</span> • <span>Cost Optimization</span>
+                </div>
+            </div>
+
+            <div class="unit-overview">
+                <h2>Unit 2 Overview</h2>
+                <p>AWS Unit 2 focuses on how cloud computing impacts costs and how organizations manage and optimize spending in AWS. Unlike traditional IT infrastructure, where companies must invest heavily in hardware upfront, cloud computing uses a pay-as-you-go pricing model that allows businesses to pay only for what they use.</p>
+                <p>This unit explores how pricing works in AWS, how organizations calculate the total cost of using cloud services, and how tools like AWS Billing and AWS Organizations help manage costs across multiple accounts.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="info-card">
+                    <h3>Fundamentals of Pricing</h3>
+                    <p>AWS pricing is based on consumption, meaning users only pay for the resources they actually use. This helps organizations avoid overpaying for unused infrastructure and align their costs with demand.</p>
+                    <div class="card-details">
+                        <strong>Key Pricing Models:</strong>
+                        <ul>
+                            <li><strong>On-Demand</strong> – Pay for compute or storage by the second or hour with no long-term commitment.</li>
+                            <li><strong>Reserved Instances / Savings Plans</strong> – Commit to usage over time in exchange for lower prices.</li>
+                            <li><strong>Spot Instances</strong> – Use spare capacity at a discount for flexible, interruption-tolerant workloads.</li>
+                        </ul>
+                    </div>
+                    <div class="card-details">
+                        <strong>Cost Drivers:</strong>
+                        <ul>
+                            <li>Compute time (e.g., EC2 instances).</li>
+                            <li>Storage usage (e.g., S3, EBS volumes).</li>
+                            <li>Data transfer (especially outbound traffic).</li>
+                            <li>Requests and API calls.</li>
+                        </ul>
+                    </div>
+                    <img src="../Pictures/Unit 2.png" alt="Unit 2 image" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>Total Cost of Ownership (TCO)</h3>
+                    <p>Total Cost of Ownership (TCO) refers to the full cost of running infrastructure over time, not just the initial purchase price. Traditional environments must account for hardware, maintenance, electricity, cooling, and staffing.</p>
+                    <p>In AWS, TCO is often lower because there are no upfront hardware costs, maintenance is handled by AWS, infrastructure scales automatically, and unused resources can be turned off.</p>
+                    <p>Organizations use TCO calculations to compare on-premises costs with cloud-based solutions and determine whether moving to the cloud is financially beneficial.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>AWS Organizations</h3>
+                    <p>AWS Organizations allows businesses to manage multiple AWS accounts under a single structure. Instead of managing accounts individually, organizations can group them and apply policies at scale.</p>
+                    <div class="card-details">
+                        <strong>Key Features:</strong>
+                        <ul>
+                            <li><strong>Consolidated Billing</strong> – Combines billing across all accounts.</li>
+                            <li><strong>Organizational Units (OUs)</strong> – Group accounts logically by team, department, or environment.</li>
+                            <li><strong>Service Control Policies (SCPs)</strong> – Apply permission guardrails across accounts.</li>
+                        </ul>
+                    </div>
+                    <p>This improves cost tracking, security, and management efficiency across large environments.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>AWS Billing &amp; Cost Management</h3>
+                    <p>AWS Billing tools help organizations track, manage, and analyze spending so they can understand where their money is going.</p>
+                    <div class="card-details">
+                        <strong>Important Tools:</strong>
+                        <ul>
+                            <li><strong>AWS Billing Dashboard</strong> – High-level view of current charges and usage.</li>
+                            <li><strong>Cost Explorer</strong> – Visualizes spending patterns over time.</li>
+                            <li><strong>Budgets</strong> – Set spending limits and alerts when thresholds are exceeded.</li>
+                            <li><strong>Cost Allocation Tags</strong> – Label resources to track costs by project, team, or environment.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Cost Optimization Strategies</h3>
+                    <p>AWS provides many strategies to reduce costs and improve efficiency.</p>
+                    <div class="card-details">
+                        <strong>Common Techniques:</strong>
+                        <ul>
+                            <li><strong>Right-Sizing</strong> – Choose instance sizes that match workload needs.</li>
+                            <li><strong>Auto Scaling</strong> – Automatically adjust capacity based on demand.</li>
+                            <li><strong>Reserved Pricing</strong> – Use Reserved Instances or Savings Plans for predictable workloads.</li>
+                            <li><strong>Spot Instances</strong> – Use for flexible, fault-tolerant tasks.</li>
+                            <li><strong>Storage Tiering</strong> – Move cold data to cheaper tiers such as S3 Glacier.</li>
+                        </ul>
+                    </div>
+                    <p>Cost optimization is an ongoing process that requires monitoring, analysis, and adjustments.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Shared Financial Responsibility</h3>
+                    <p>While AWS provides cost-efficient infrastructure, customers are responsible for how they use resources. Poor configuration or leaving unused resources running can quickly increase costs.</p>
+                    <div class="card-details">
+                        <strong>Customer Responsibilities:</strong>
+                        <ul>
+                            <li>Monitor usage regularly.</li>
+                            <li>Turn off or delete unused resources.</li>
+                            <li>Choose the right pricing models for each workload.</li>
+                            <li>Optimize storage and compute utilization.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card summary-card">
+                    <h3>Unit 2 Summary</h3>
+                    <p>AWS Unit 2 explains how cloud computing changes the way organizations manage costs. Instead of paying upfront for hardware, AWS allows users to pay only for what they use.</p>
+                    <p>Understanding pricing models, TCO, AWS Organizations, and billing tools helps organizations control spending and avoid unnecessary expenses. By applying cost optimization strategies, businesses can maximize value while minimizing cloud costs.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 AWS Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

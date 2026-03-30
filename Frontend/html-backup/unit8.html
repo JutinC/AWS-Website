@@ -1,0 +1,133 @@
+<!-- 
+    Justin Choi
+    Period 6 
+    January 3, 2026
+    Lang Track 
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 8 - AWS Academy</title>
+    <link rel="stylesheet" href="homepage.css?v=1.1">
+    <script src="unit.js?v=1.0" defer></script>
+</head>
+<body>
+    <header>
+        <h1><a href="homepage.html">Home</a></h1>
+        <nav>
+            <ul>
+                <li><a href="unit1.html">Unit 1</a></li>
+                <li><a href="unit2.html">Unit 2</a></li>
+                <li><a href="unit3.html">Unit 3</a></li>
+                <li><a href="unit4.html">Unit 4</a></li>
+                <li><a href="unit5.html">Unit 5</a></li>
+                <li><a href="unit6.html">Unit 6</a></li>
+                <li><a href="unit7.html">Unit 7</a></li>
+                <li><a href="unit8.html" class="active">Unit 8</a></li>
+                <li><a href="unit9.html">Unit 9</a></li>
+                <li><a href="unit10.html">Unit 10</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="unit-content">
+            <a href="homepage.html" class="back-link">← Back to Home</a>
+            
+            <div class="unit-header">
+                <h1>Unit 8 – Database Services</h1>
+                <div class="unit-keywords">
+                    <span>Amazon RDS</span> • <span>Amazon Aurora</span> • <span>Amazon DynamoDB</span> • <span>Amazon Redshift</span>
+                </div>
+            </div>
+
+            <div class="unit-overview">
+                <h2>Unit 8 Overview</h2>
+                <p>AWS Unit 8 focuses on database services, explaining how structured data is stored, queried, and managed at scale. Databases are <strong>essential</strong> for applications that require fast access to organized data, such as user accounts, transactions, analytics, and reporting systems.</p>
+                <p>This unit explores different types of databases including <strong>relational databases</strong>, <strong>NoSQL databases</strong>, <strong>data warehouses</strong>, and cloud-native relational databases. Each service is designed for specific workloads, performance needs, and scalability requirements. By the end of this unit, you should be able to choose the most appropriate database service for a given workload.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="info-card">
+                    <h3>Database Basics</h3>
+                    <p>Databases store structured or semi-structured data in a way that allows it to be efficiently queried, updated, and managed. Unlike simple file storage, databases support indexing, relationships, and optimized queries. AWS provides multiple database services because applications have <strong>different needs</strong>.</p>
+                    <p>Some applications require strict consistency and immediate updates, while others need massive scalability and flexible data models. Understanding the <strong>difference</strong> between relational and NoSQL databases is critical for selecting the right database service for your workload.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Amazon RDS (Relational Database Service)</h3>
+                    <p>Amazon RDS is a <strong>managed relational database service</strong> that supports popular database engines such as MySQL, PostgreSQL, MariaDB, Oracle, and SQL Server. It is designed for easy setup, operation, and scaling. It automates tasks such as hardware provisioning, database setup, patching, and backups. It is ideal for familiar SQL-based databases.</p>
+                    <img src="../Pictures/RDS.png" alt="Amazon RDS Diagram" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>Amazon Aurora</h3>
+                    <p>Aurora is a fully managed relational database built by AWS and compatible with MySQL and PostgreSQL. It combines the familiarity of traditional databases with the performance and reliability that cloud-native services bring. Aurora offers high availability, automatic scaling, and improved durability compared to traditional RDS engines.</p>
+                    <img src="../Pictures/Aurora.png" alt="Amazon Aurora Diagram" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>RDS - How It Works</h3>
+                    <p>With Amazon RDS, AWS manages the underlying infrastructure, operating system, and database software. Users interact with the databases through standard SQL queries, just as they would with a traditional relational database.</p>
+                    <p>RDS supports Multi-AZ deployment for high availability and automatic failover. AWS handles backups, software patching, and monitoring, allowing developers to focus on application development rather than database management.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Aurora - How It Differs from RDS</h3>
+                    <ul>
+                        <li>Unlike traditional RDS engines, Aurora separates compute and storage. This allows storage to scale transparently without downtime and improves performance.</li>
+                        <li>Proactive features include automatic patching, scaling, and improved durability with replication across multiple Availability Zones.</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>RDS - Use Cases & Benefits</h3>
+                    <p>Common use cases include web applications, e-commerce platforms, transaction processing, and applications requiring reliable relational database performance.</p>
+                    <p>Benefits include ease of use, automated management, scalability, and reliability. RDS simplifies database administration while maintaining compatibility with existing applications.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Aurora - Use Cases</h3>
+                    <ul>
+                        <li>High-traffic web applications</li>
+                        <li>SaaS platforms</li>
+                        <li>Applications requiring high availability and managed scalability</li>
+                        <li>Mobile and web applications</li>
+                        <li>Gaming leaderboards</li>
+                        <li>IoT applications and session management</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Amazon Redshift</h3>
+                    <p>Amazon Redshift is a fully managed <strong>data warehouse service</strong> designed for large-scale data analytics. Unlike transactional databases, Redshift is optimized for analyzing massive datasets through parallel processing. It can handle petabytes of data and supports complex analytical queries for business intelligence and reporting.</p>
+                    <img src="../Pictures/Redshift.png" alt="Amazon Redshift Diagram" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>Amazon DynamoDB</h3>
+                    <p>Amazon DynamoDB is a fully managed <strong>NoSQL database service</strong> designed for applications that need consistent, single-digit millisecond latency at any scale. Unlike relational databases, DynamoDB provides flexible data models and automatic scaling without the need for server management.</p>
+                    <img src="../Pictures/DynamoDB.png" alt="Amazon DynamoDB Diagram" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>Database Comparison</h3>
+                    <ul>
+                        <li><strong>Amazon RDS:</strong> Managed relational database service, suitable for different application requirements. By understanding the strengths and interactions of RDS, Aurora, DynamoDB, and Redshift, organizations can design data architectures that are efficient, scalable, and cost-effective.</li>
+                        <li><strong>Amazon Aurora:</strong> Cloud-native relational database with high performance, automatic scaling, and improved durability compared to traditional RDS.</li>
+                        <li><strong>Amazon DynamoDB:</strong> Serverless NoSQL database with extreme scalability and single-digit millisecond latency.</li>
+                        <li><strong>Amazon Redshift:</strong> Data warehouse optimized for analytics and reporting, designed for large-scale data processing.</li>
+                    </ul>
+                    <p>Choosing the right database service depends on data structure, access patterns, scalability needs, and performance requirements.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 AWS Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

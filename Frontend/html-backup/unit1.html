@@ -1,0 +1,143 @@
+<!-- 
+    Justin Choi
+    Period 6 
+    January 3, 2026
+    Lang Track 
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1 - AWS Academy</title>
+    <link rel="stylesheet" href="homepage.css?v=1.0">
+    <script src="unit.js?v=1.0" defer></script>
+</head>
+<body>
+    <header>
+        <h1><a href="homepage.html">Home</a></h1>
+        <nav>
+            <ul>
+                <li><a href="unit1.html" class="active">Unit 1</a></li>
+                <li><a href="unit2.html">Unit 2</a></li>
+                <li><a href="unit3.html">Unit 3</a></li>
+                <li><a href="unit4.html">Unit 4</a></li>
+                <li><a href="unit5.html">Unit 5</a></li>
+                <li><a href="unit6.html">Unit 6</a></li>
+                <li><a href="unit7.html">Unit 7</a></li>
+                <li><a href="unit8.html">Unit 8</a></li>
+                <li><a href="unit9.html">Unit 9</a></li>
+                <li><a href="unit10.html">Unit 10</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main data-page-id="1">
+        <div class="unit-content">
+            <a href="homepage.html" class="back-link">← Back to Home</a>
+            
+            <div class="unit-header">
+                <h1>Unit 1 – Cloud Concepts Overview</h1>
+                <div class="unit-keywords">
+                    <span>Cloud Computing</span> • <span>AWS Basics</span> • <span>Global Infrastructure</span>
+                </div>
+            </div>
+
+            <div class="unit-overview">
+                <h2>Unit 1 Overview</h2>
+                <p>AWS Unit 1 introduces the fundamental concepts of cloud computing and explains how cloud technology is transforming the way organizations build and manage IT infrastructure. Instead of relying on physical servers and on-premises data centers, cloud computing allows businesses to access computing resources over the internet.</p>
+                <p>Cloud computing provides flexible, scalable, and cost-efficient solutions for storing data, running applications, and managing infrastructure. This unit focuses on understanding what the cloud is, why it is beneficial, and how AWS plays a role in delivering cloud services globally.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="info-card">
+                    <h3>Introduction to Cloud Computing</h3>
+                    <p>Cloud computing is the delivery of computing services—such as servers, storage, databases, networking, and software—over the internet. Instead of owning and maintaining physical hardware, users can access these resources on demand from cloud providers like AWS.</p>
+                    <p>This model allows organizations to quickly scale resources up or down depending on their needs, removing the need for large upfront investments in hardware and reducing the complexity of managing infrastructure.</p>
+                    <div class="card-details">
+                        <strong>Service Models:</strong>
+                        <ul>
+                            <li><strong>IaaS (Infrastructure as a Service)</strong> – Virtualized computing resources such as Amazon EC2.</li>
+                            <li><strong>PaaS (Platform as a Service)</strong> – Managed platforms for building applications.</li>
+                            <li><strong>SaaS (Software as a Service)</strong> – Fully managed applications accessed over the internet.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Advantages of the Cloud</h3>
+                    <p>Cloud computing offers several key advantages compared to traditional on-premises systems.</p>
+                    <div class="card-details">
+                        <strong>Key Benefits:</strong>
+                        <ul>
+                            <li><strong>Scalability</strong> – Instantly increase or decrease resources based on demand.</li>
+                            <li><strong>Cost Efficiency</strong> – Pay only for what you use instead of buying hardware upfront.</li>
+                            <li><strong>Availability &amp; Reliability</strong> – Built-in redundancy across multiple data centers.</li>
+                            <li><strong>Global Reach</strong> – Deploy applications closer to users around the world to reduce latency.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Introduction to AWS</h3>
+                    <p>Amazon Web Services (AWS) is one of the leading cloud service providers in the world, offering a wide range of services including compute, storage, databases, networking, analytics, and machine learning.</p>
+                    <p>AWS operates on a global infrastructure made up of Regions and Availability Zones. Regions are geographic areas, while Availability Zones are isolated data centers within a region designed for fault tolerance and high availability.</p>
+                    <p>AWS uses a pay-as-you-go pricing model, meaning users are charged only for the resources they consume, making it accessible to both startups and large enterprises.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>AWS Global Infrastructure</h3>
+                    <p>AWS infrastructure is designed for high availability and reliability. Each Region contains multiple Availability Zones that are physically separated but connected with high-speed networking.</p>
+                    <p>This design allows applications to be distributed across multiple locations so that if one data center fails, others can continue operating. AWS also uses edge locations to deliver content quickly to users worldwide, improving performance for latency-sensitive applications.</p>
+                    <img src="../Pictures/Unit 1.png" alt="Unit 1 image" class="card-image">
+                </div>
+
+                <div class="info-card">
+                    <h3>Moving to the AWS Cloud</h3>
+                    <p>Migrating to the AWS cloud involves transferring applications, data, and workloads from on-premises systems to AWS infrastructure. This allows organizations to gain scalability, flexibility, and cost savings.</p>
+                    <div class="card-details">
+                        <strong>The “6 R’s” of Migration:</strong>
+                        <ul>
+                            <li>Rehosting (lift and shift)</li>
+                            <li>Replatforming</li>
+                            <li>Repurchasing</li>
+                            <li>Refactoring</li>
+                            <li>Retiring</li>
+                            <li>Retaining</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Benefits of Cloud Migration</h3>
+                    <p>Moving to the cloud provides greater flexibility, enabling faster deployment of applications and quicker responses to changing business needs. Disaster recovery improves because data can be replicated across multiple locations.</p>
+                    <p>By spending less time managing physical infrastructure, organizations can focus more on innovation—developing new features, improving user experience, and experimenting with new ideas.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Shared Responsibility Model</h3>
+                    <p>AWS uses a shared responsibility model to define how security duties are divided between AWS and the customer.</p>
+                    <div class="card-details">
+                        <strong>Responsibilities:</strong>
+                        <ul>
+                            <li><strong>AWS</strong> is responsible for security <em>of</em> the cloud (infrastructure, hardware, and facilities).</li>
+                            <li><strong>Customers</strong> are responsible for security <em>in</em> the cloud (applications, data, configurations, and access).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card summary-card">
+                    <h3>Unit 1 Summary</h3>
+                    <p>AWS Unit 1 introduces the core concepts of cloud computing and explains how cloud services provide scalable, reliable, and cost-efficient solutions for modern applications.</p>
+                    <p>Cloud computing removes the need for physical infrastructure and allows organizations to access resources on demand. AWS provides a global platform for delivering these services, supported by Regions, Availability Zones, and edge locations.</p>
+                    <p>Understanding these concepts is essential for building and managing cloud-based systems and sets the foundation for all future AWS topics.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 AWS Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
