@@ -1,3 +1,10 @@
+/*
+Justin Choi
+Period 6 
+January 3, 2026
+Section 9
+*/
+
 package choi.six.aws;
 
 import org.springframework.boot.SpringApplication;
